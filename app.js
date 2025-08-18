@@ -2,7 +2,6 @@
 
 
 // Crear lista de amigos
-
 let amigos = [];
 
 // Boton agregar amigo
@@ -27,14 +26,19 @@ function numeroAleatorio() {
 // Funcion para listar nombres
 function mostrarNombres() {
     let ul = document.getElementById("listaAmigos");
+    //Limpiar la lista de HTML (ul) en cada botton agregarAmigo
     ul.innerHTML = "";
 
     for (let nombre of amigos) {
+
         let li = document.createElement("li");
         li.textContent = nombre;
-
+        // Agregar elemtos a "ul"
         ul.appendChild(li);
     }
+}
 
+function mostrarAmigoElegido() {
+    
 }
 
