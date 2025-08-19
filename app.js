@@ -4,24 +4,22 @@
 // Crear lista de amigos
 let amigos = [];
 
-let limite;
-
 // Boton agregar amigo
 function agregarAmigo() {
     // Capturar el valor del input
     let valor = document.getElementById('amigo').value;
-    if (valor.trim() !== "");
+    if (valor.trim() !== "") {
         amigos.push(valor);
         limite = amigos.length;
         //Limpiar 
         document.getElementById('amigo').value = "";
         mostrarNombres();
-
+    }
 }
 
 // Funcion para numero aleatorio
 function numeroAleatorio() {
-    return  Math.floor(Math.random() * limite);
+    return  Math.floor(Math.random() * amigos.length);
 }
 
 // Funcion para listar nombres
