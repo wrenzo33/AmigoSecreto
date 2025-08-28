@@ -8,19 +8,18 @@ let amigos = [];
 function agregarAmigo() {
     // Capturar el valor del input
     let valor = document.getElementById('amigo').value;
-    if (valor.trim() !== "");
+    if (valor.trim() !== "") {
         amigos.push(valor);
+        limite = amigos.length;
         //Limpiar 
         document.getElementById('amigo').value = "";
-        console.log(amigos)
-
         mostrarNombres();
-
+    }
 }
 
 // Funcion para numero aleatorio
 function numeroAleatorio() {
-    return  Math.floor(Math.random() * 10) + 1;
+    return  Math.floor(Math.random() * amigos.length);
 }
 
 // Funcion para listar nombres
@@ -38,7 +37,18 @@ function mostrarNombres() {
     }
 }
 
-function mostrarAmigoElegido() {
-    
+function sortearAmigo() {
+    document.getElementById("listaAmigos").hidden = true;
+    mostrarAmigo();
 }
 
+function mostrarAmigo() {
+    let ul2 = document.getElementById("resultado");
+    ul2.innerHTML = "";
+    let indice = numeroAleatorio();
+    console.log("tamaño de lista: " + limite)
+    console.log("numero aleatorio: " + indice)
+    let li2 = document.createElement("li")
+    li2.textContent = amigos[indice];
+    ul2.appendChild(li2);
+}
