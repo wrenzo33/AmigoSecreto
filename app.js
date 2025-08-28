@@ -14,6 +14,9 @@ function agregarAmigo() {
         //Limpiar 
         document.getElementById('amigo').value = "";
         mostrarNombres();
+        console.log(amigos)
+    } else {
+        alert("Inserta un nombre valido!")
     }
 }
 
@@ -49,6 +52,6 @@ function mostrarAmigo() {
     console.log("tamaño de lista: " + limite)
     console.log("numero aleatorio: " + indice)
     let li2 = document.createElement("li")
-    li2.textContent = amigos[indice];
+    li2.textContent = `El amigo sorteado es: ${amigos[indice]}`;
     ul2.appendChild(li2);
 }
